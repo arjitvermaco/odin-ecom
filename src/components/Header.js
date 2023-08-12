@@ -47,7 +47,7 @@ export default function Header() {
         <div className="flex space-x-5 text-white font-bold">
           {categories.map((category) => {
             return (
-              <Link key={category}>
+              <Link key={category} to={`category/${category}`}>
                 <p className="capitalize">{category}</p>
               </Link>
             );
