@@ -1,11 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductCard(props) {
   return (
     <div className="w-1/4 border border-transparent shadow-lg mr-4 mt-8 p-8 rounded-md flex flex-col justify-between hover:shadow-2xl hover:border hover:border-blue-600">
-      <img src={props.product.image} className="h-64 mx-auto" alt={props.product.title} />
-      <h3>{props.product.title}</h3>
-
+      <img
+        src={props.product.image}
+        className="h-64 mx-auto"
+        alt={props.product.title}
+      />
+      <Link to={`/product/${props.product.id}`}>
+        <h3>{props.product.title}</h3>
+      </Link>
       <div className="flex mt-4 justify-between">
         <div>
           <p>$ {props.product.price}</p>

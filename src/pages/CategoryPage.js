@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useFetcher, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard';
 
 export default function CategoryPage() {
@@ -22,7 +22,7 @@ export default function CategoryPage() {
   },[id])
 
   //fetch(url+id)
-  console.log("Page id is:",id)
+
   return (
     <div className='max-w-7xl pt-16 mx-auto flex flex-wrap justify-between'>
       {loading ? ("Fetching data"):(products.map((product)=>{
