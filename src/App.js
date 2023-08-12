@@ -5,10 +5,12 @@ import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import ProductPage from "./pages/ProductPage";
 import Header from "./components/Header";
+import Cart from "./components/Cart";
 function App() {
   return (
     <>
     <Header/>
+    <Cart/>
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="category/:id" element={<CategoryPage />} />
