@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Dialog,Transition } from "@headlessui/react";
 
-export default function Cart() {
-  let [isOpen, setIsOpen] = useState(true);
+export default function Cart({isOpen,setIsOpen}) {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
     <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
@@ -31,7 +30,7 @@ export default function Cart() {
                         <button
                           type="button"
                           className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                          
+                          onClick={()=>{setIsOpen(false)}}
                         >
                           <span className="sr-only">Close panel</span>
                           <svg
@@ -55,11 +54,11 @@ export default function Cart() {
                   <div className="relative mt-6 flex-1 px-4 sm:px-6 flex flex-col justify-between">
                     {/* Replace with your content */}
                     <div>
-                   
+                   products go herer
                     </div>
 
                     <div>
-                      
+                      checkout button
                     </div>
                     {/* /End replace */}
                   </div>

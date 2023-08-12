@@ -6,11 +6,14 @@ import LoginPage from "./pages/LoginPage";
 import ProductPage from "./pages/ProductPage";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
+import { useState } from "react";
 function App() {
+  let [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-    <Header/>
-    <Cart/>
+    <Header isOpen={isOpen} setIsOpen={setIsOpen}/>
+    <Cart isOpen={isOpen} setIsOpen={setIsOpen}/>
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="category/:id" element={<CategoryPage />} />

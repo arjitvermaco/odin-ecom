@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({isOpen,setIsOpen}) {
   const [categories, setCategories] = useState([]);
   let url = "https://fakestoreapi.com/products/categories";
 
@@ -61,6 +61,7 @@ export default function Header() {
               stroke-width="1.5"
               stroke="currentColor"
               class="w-6 h-6"
+              onClick={()=>{setIsOpen(true)}}
             >
               <path
                 stroke-linecap="round"
