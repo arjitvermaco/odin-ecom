@@ -4,8 +4,11 @@ import CategoryPage from "./pages/CategoryPage";
 import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import ProductPage from "./pages/ProductPage";
+import Header from "./components/Header";
 function App() {
   return (
+    <>
+    <Header/>
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="category" element={<CategoryPage />} />
@@ -13,6 +16,8 @@ function App() {
       <Route path="cart" element={<CartPage />} />
       <Route path="login" element={<LoginPage />} />
     </Routes>
+    </>
+    
   );
 }
 
