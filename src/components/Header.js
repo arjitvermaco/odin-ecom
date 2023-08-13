@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useContext} from "react";
 import { Link } from "react-router-dom";
-
+import AppContext from '../context/AppContext';
 export default function Header({isOpen,setIsOpen}) {
   const [categories, setCategories] = useState([]);
   let url = "https://fakestoreapi.com/products/categories";
+  const appData = useContext(AppContext)
 
   async function getAllCategories() {
     let response = await fetch(url);
@@ -40,7 +41,7 @@ export default function Header({isOpen,setIsOpen}) {
                 d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z"
               />
             </svg>
-            My Store
+            {appData.appName}
           </Link>
         </div>
 
@@ -61,7 +62,7 @@ export default function Header({isOpen,setIsOpen}) {
               stroke-width="1.5"
               stroke="currentColor"
               class="w-6 h-6"
-              onClick={()=>{setIsOpen(true)}}
+              onClick={()=>{setIsOpen(!isOpen)}}
             >
               <path
                 stroke-linecap="round"
