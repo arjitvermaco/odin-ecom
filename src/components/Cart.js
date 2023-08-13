@@ -1,7 +1,11 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { Dialog,Transition } from "@headlessui/react";
+import AppContext from "../context/AppContext";
 
 export default function Cart({isOpen,setIsOpen}) {
+
+  const appData = useContext(AppContext)
+  
   return (
     <Transition.Root show={isOpen} as={Fragment}>
     <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
@@ -54,7 +58,15 @@ export default function Cart({isOpen,setIsOpen}) {
                   <div className="relative mt-6 flex-1 px-4 sm:px-6 flex flex-col justify-between">
                     {/* Replace with your content */}
                     <div>
-                   products go herer
+                    {appData.cart.map((item)=>{
+                      return(
+                        <div className="h-24 flex">
+                        <h3>{item.title}</h3>
+                        <span>Quantity:{item.quantity}</span>
+                        <img className="h-16" src={item.image}/>
+                        </div>
+                      )
+                    })}
                     </div>
 
                     <div>
